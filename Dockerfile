@@ -12,7 +12,8 @@ EXPOSE 19132/udp
 EXPOSE 19133/tcp
 EXPOSE 19133/udp
 
-# Set workdir
+# Set volume & workdir
+VOLUME ["/bedrock-server"]
 WORKDIR /bedrock-server
 
 # Download latest bedrock server from Microsoft
