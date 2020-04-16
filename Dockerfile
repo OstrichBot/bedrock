@@ -21,7 +21,7 @@ RUN wget -O bedrock-server.zip $(curl https://www.minecraft.net/en-us/download/s
   && unzip bedrock-server.zip
 
 # Download Running Configuration
-ADD https://raw.githubusercontent.com/OstrichBot/bedrock/master/server.properties /bedrock-server
+ADD https://raw.githubusercontent.com/OstrichBot/bedrock/master/server.properties bedrock-server/
 
 # Set env path
 ENV LD_LIBRARY_PATH=.
