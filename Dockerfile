@@ -20,7 +20,8 @@ WORKDIR /bedrock-server
 
 # Download latest bedrock server from Microsoft
 #RUN export download=$(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip")
-ADD https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip bedrock-server.zip
+RUN ARG download=$(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip")
+ADD $download bedrock-server.zip
 
 # Unzip to workdir
 RUN unzip bedrock-server.zip
