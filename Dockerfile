@@ -4,9 +4,6 @@ FROM ubuntu:18.04
 # Install necessary packages
 RUN apt-get update && apt-get install -y --no-install-recommends unzip apt-utils libcurl4-openssl-dev ca-certificates curl
 
-# Set a Name Server
-RUN echo "1.1.1.1 \n" > /etc/resolv.conf;
-
 # Expose minecraft bedrock port IPv4
 EXPOSE 19132/tcp
 EXPOSE 19132/udp
@@ -19,9 +16,8 @@ EXPOSE 19133/udp
 WORKDIR /bedrock-server
 
 # Download latest bedrock server from Microsoft
-#RUN export download=$(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip")
-RUN ARG download=$(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip")
-ADD $download bedrock-server.zip
+ENV download=$(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip")
+ADD ${download} bedrock-server.zip
 
 # Unzip to workdir
 RUN unzip bedrock-server.zip
