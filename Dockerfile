@@ -16,7 +16,7 @@ EXPOSE 19133/udp
 WORKDIR /bedrock-server
 
 # Download latest bedrock server from Microsoft
-RUN wget -O bedrock-server.zip $(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip") \
+RUN curl -O bedrock-server.zip $(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip") \
   && unzip bedrock-server.zip \
   && rm bedrock-server.zip
 
