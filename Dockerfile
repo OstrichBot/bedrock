@@ -20,9 +20,6 @@ WORKDIR /bedrock-server
 RUN wget -O bedrock-server.zip $(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip") \
   && unzip bedrock-server.zip
 
-# Download Running Configuration
-ADD https://raw.githubusercontent.com/OstrichBot/bedrock/master/server.properties bedrock-server/
-
 # Set env path
 ENV LD_LIBRARY_PATH=.
 
