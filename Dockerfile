@@ -2,7 +2,7 @@
 FROM ubuntu:18.04
 
 # Install necessary packages
-RUN apt-get update && apt-get install -y --no-install-recommends unzip apt-utils libcurl4-openssl-dev ca-certificates curl
+RUN apt-get update && apt-get install -y --no-install-recommends unzip apt-utils libcurl4-openssl-dev ca-certificates curl wget
 
 # Expose minecraft bedrock port IPv4
 EXPOSE 19132/tcp
