@@ -16,10 +16,6 @@ WORKDIR /bedrock-server
 # Download latest bedrock server from Microsoft
 RUN wget -O bedrock-server.zip $(curl https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | grep -Eo "https://minecraft.azureedge.net/bin-linux/bedrock-server-.*\.zip") && unzip bedrock-server.zip
 
-# Setup a user
-RUN useradd -s /usr/sbin/nologin -r -M steve && chown -R steve:steve /bedrock-server
-USER steve
-
 # Set env path
 ENV LD_LIBRARY_PATH=.
 
