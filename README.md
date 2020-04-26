@@ -1,4 +1,8 @@
 # Linux Minecraft Bedrock Server
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/ostrichbot/bedrock-server)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/ostrichbot/bedrock-server)
+![Docker Pulls](https://img.shields.io/docker/pulls/ostrichbot/bedrock-server)
+
 Linux Minecraft Bedrock Server Docker Image from the Microsoft Official Site.
 https://www.minecraft.net/en-us/download/server/bedrock/
 
